@@ -1,25 +1,25 @@
 <?php
 /**
- * Unite Meta Boxes
+ * Disjoin Meta Boxes
  *
  */
 
-add_action('add_meta_boxes', 'unite_add_custom_box');
+add_action('add_meta_boxes', 'disjoin_add_custom_box');
 /**
  * Add Meta Boxes.
  *
  * Add Meta box in page and post post types.
  */
-function unite_add_custom_box()
+function disjoin_add_custom_box()
 {
     add_meta_box('siderbar-layout', //Unique ID
-        __('Select layout for this specific Page only ( Note: This setting only reflects if page Template is set as Default Template and Blog Type Templates.)', 'unite'), //Title
-        'unite_sidebar_layout', //Callback function
+        __('Select layout for this specific Page only ( Note: This setting only reflects if page Template is set as Default Template and Blog Type Templates.)', 'disjoin'), //Title
+        'disjoin_sidebar_layout', //Callback function
         'page' //show metabox in pages
         );
     add_meta_box('siderbar-layout', //Unique ID
-        __('Select layout for this specific Post only', 'unite'), //Title
-        'unite_sidebar_layout', //Callback function
+        __('Select layout for this specific Post only', 'disjoin'), //Title
+        'disjoin_sidebar_layout', //Callback function
         'post', //show metabox in posts
         'side'
         );
@@ -34,7 +34,7 @@ global $site_layout;
 /**
  * Displays metabox to for sidebar layout
  */
-function unite_sidebar_layout()
+function disjoin_sidebar_layout()
 {
     global $site_layout, $post;
     // Use nonce for verification
@@ -60,12 +60,12 @@ function unite_sidebar_layout()
 /****************************************************************************************/
 
 
-add_action('save_post', 'unite_save_custom_meta');
+add_action('save_post', 'disjoin_save_custom_meta');
 /**
  * save the custom metabox data
  * @hooked to save_post hook
  */
-function unite_save_custom_meta($post_id)
+function disjoin_save_custom_meta($post_id)
 {
     global $site_layout, $post;
     

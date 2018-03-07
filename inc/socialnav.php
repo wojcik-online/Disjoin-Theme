@@ -10,16 +10,16 @@
 add_action( 'init', 'register_social_menu' );
 
 function register_social_menu() {
-	register_nav_menu( 'social-menu', _x( 'Social Menu', 'nav menu location', 'unite' ) );
+	register_nav_menu( 'social-menu', _x( 'Social Menu', 'nav menu location', 'disjoin' ) );
 }
 
-if ( ! function_exists( 'unite_social_icons' ) ) :
+if ( ! function_exists( 'disjoin_social_icons' ) ) :
 /**
  * Display social links in footer and widgets
  *
- * @package unite
+ * @package disjoin
  */
-function unite_social_icons(){
+function disjoin_social_icons(){
   if ( has_nav_menu( 'social-menu' ) ) {
   	wp_nav_menu(
   		array(
@@ -39,8 +39,8 @@ function unite_social_icons(){
 }
 endif;
 
-/* Unite Social Nav CSS */
-function unite_social_css(){ ?>
+/* Disjoin Social Nav CSS */
+function disjoin_social_css(){ ?>
     <style type="text/css">
         #social li {
             display: inline-block;
@@ -161,4 +161,4 @@ function unite_social_css(){ ?>
         .social-icons li a[href*="profiles.wordpress.org"]:hover {color: #21759A !important;}
     </style><?php
 }
-add_action( 'wp_head', 'unite_social_css', 10 );
+add_action( 'wp_head', 'disjoin_social_css', 10 );

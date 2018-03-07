@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package unite
+ * @package disjoin
  */
 
 /**
@@ -13,7 +13,7 @@
  * @global array $themecolors
  * @return void
  */
-function unite_wpcom_setup() {
+function disjoin_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -27,4 +27,4 @@ function unite_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'unite_wpcom_setup' );
+add_action( 'after_setup_theme', 'disjoin_wpcom_setup' );

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Unite Theme\n"
+"Project-Id-Version: Disjoin Theme\n"
 "POT-Creation-Date: 2016-07-12 12:21+0300\n"
 "PO-Revision-Date: 2016-07-12 13:41+0300\n"
 "Last-Translator: Andrey Shpak <ashpak@ashpak.ru>\n"
@@ -581,11 +581,11 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
 #: ../inc/customizer.php:37
-msgid "Unite Options"
+msgid "Disjoin Options"
 msgstr "Опции темы"
 
 #: ../inc/customizer.php:38
-msgid "Panel to update unite theme options"
+msgid "Panel to update disjoin theme options"
 msgstr "Панель обновления настроек темы"
 
 #: ../inc/customizer.php:43
@@ -731,7 +731,7 @@ msgid "Support and Documentation"
 msgstr "Поддержка и документация"
 
 #: ../inc/customizer.php:514 ../inc/extras.php:295
-msgid "Unite Documentation"
+msgid "Disjoin Documentation"
 msgstr "Документация темы"
 
 #: ../inc/customizer.php:515 ../inc/extras.php:296
@@ -909,8 +909,8 @@ msgid "Displays tabbed list of popular posts, recent posts & comments"
 msgstr "Отображает список популярных записей и комментариев. "
 
 #: ../inc/widgets/popular-posts-widget.php:19
-msgid "Unite: Popular Posts Widget"
-msgstr "Unite: Виджет популярные записи"
+msgid "Disjoin: Popular Posts Widget"
+msgstr "Disjoin: Виджет популярные записи"
 
 #: ../inc/widgets/popular-posts-widget.php:37
 msgid "Popular"

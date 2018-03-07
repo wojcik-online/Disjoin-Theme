@@ -4,31 +4,31 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package unite
+ * @package disjoin
  */
 
-if ( ! function_exists( 'unite_paging_nav' ) ) :
+if ( ! function_exists( 'disjoin_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function unite_paging_nav() {
+function disjoin_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'unite' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'disjoin' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"> <?php next_posts_link( __( '<i class="fa fa-chevron-left"></i> Older posts', 'unite' ) ); ?></div>
+			<div class="nav-previous"> <?php next_posts_link( __( '<i class="fa fa-chevron-left"></i> Older posts', 'disjoin' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-chevron-right"></i>', 'unite' ) ); ?> </div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-chevron-right"></i>', 'disjoin' ) ); ?> </div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -37,13 +37,13 @@ function unite_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'unite_post_nav' ) ) :
+if ( ! function_exists( 'disjoin_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @return void
  */
-function unite_post_nav() {
+function disjoin_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -53,11 +53,11 @@ function unite_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'unite' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'disjoin' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left"></i> %title', 'Previous post link', 'unite' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa fa-chevron-right"></i>', 'Next post link',     'unite' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left"></i> %title', 'Previous post link', 'disjoin' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa fa-chevron-right"></i>', 'Next post link',     'disjoin' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -65,20 +65,20 @@ function unite_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'unite_comment' ) ) :
+if ( ! function_exists( 'disjoin_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function unite_comment( $comment, $args, $depth ) {
+function disjoin_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'unite' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'unite' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'disjoin' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'disjoin' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -88,20 +88,20 @@ function unite_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'unite' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'disjoin' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'unite' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'disjoin' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'unite' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'disjoin' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'unite' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'disjoin' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -123,13 +123,13 @@ function unite_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for unite_comment()
+endif; // ends check for disjoin_comment()
 
-if ( ! function_exists( 'unite_posted_on' ) ) :
+if ( ! function_exists( 'disjoin_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function unite_posted_on() {
+function disjoin_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -158,7 +158,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category.
  */
-function unite_categorized_blog() {
+function disjoin_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -172,20 +172,20 @@ function unite_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so unite_categorized_blog should return true.
+		// This blog has more than 1 category so disjoin_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so unite_categorized_blog should return false.
+		// This blog has only 1 category so disjoin_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in unite_categorized_blog.
+ * Flush out the transients used in disjoin_categorized_blog.
  */
-function unite_category_transient_flusher() {
+function disjoin_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'unite_category_transient_flusher' );
-add_action( 'save_post',     'unite_category_transient_flusher' );
+add_action( 'edit_category', 'disjoin_category_transient_flusher' );
+add_action( 'save_post',     'disjoin_category_transient_flusher' );

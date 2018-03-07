@@ -2,7 +2,7 @@
 /**
  * _s functions and definitions
  *
- * @package unite
+ * @package disjoin
  */
 
 /**
@@ -15,16 +15,16 @@ if ( ! isset( $content_width ) ) {
 /**
  * Set the content width for full width pages with no sidebar.
  */
-function unite_content_width() {
+function disjoin_content_width() {
   if ( is_page_template( 'page-fullwidth.php' ) || is_page_template( 'front-page.php' ) ) {
     global $content_width;
     $content_width = 1110; /* pixels */
   }
 }
-add_action( 'template_redirect', 'unite_content_width' );
+add_action( 'template_redirect', 'disjoin_content_width' );
 
 
-if ( ! function_exists( 'unite_setup' ) ) :
+if ( ! function_exists( 'disjoin_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -32,15 +32,15 @@ if ( ! function_exists( 'unite_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function unite_setup() {
+function disjoin_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change 'unite' to the name of your theme in all the template files
+	 * to change 'disjoin' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'unite', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'disjoin', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -52,20 +52,20 @@ function unite_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'unite-featured', 730, 410, true );
+	add_image_size( 'disjoin-featured', 730, 410, true );
 	add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'unite' ),
-		'footer-links' => __( 'Footer Links', 'unite' ) // secondary nav in footer
+		'primary' => __( 'Primary Menu', 'disjoin' ),
+		'footer-links' => __( 'Footer Links', 'disjoin' ) // secondary nav in footer
 	) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'unite_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'disjoin_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -82,17 +82,17 @@ function unite_setup() {
 	add_theme_support( 'title-tag' );
 
 }
-endif; // unite_setup
-add_action( 'after_setup_theme', 'unite_setup' );
+endif; // disjoin_setup
+add_action( 'after_setup_theme', 'disjoin_setup' );
 
 
-if ( ! function_exists( 'unite_widgets_init' ) ) :
+if ( ! function_exists( 'disjoin_widgets_init' ) ) :
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function unite_widgets_init() {
+function disjoin_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'unite' ),
+		'name'          => __( 'Sidebar', 'disjoin' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -129,61 +129,61 @@ function unite_widgets_init() {
 		'after_title'   => '</h3>',
     ));
 
-    register_widget( 'unite_popular_posts_widget' );
-    register_widget( 'unite_social_widget' );
+    register_widget( 'disjoin_popular_posts_widget' );
+    register_widget( 'disjoin_social_widget' );
 }
 endif;
-add_action( 'widgets_init', 'unite_widgets_init' );
+add_action( 'widgets_init', 'disjoin_widgets_init' );
 
 /**
- * Include widgets for Unite theme
+ * Include widgets for Disjoin theme
  */
 include(get_template_directory() . "/inc/widgets/popular-posts-widget.php");
 include(get_template_directory() . "/inc/widgets/widget-social.php");
 
 /**
- * Include Metabox for Unite theme
+ * Include Metabox for Disjoin theme
  */
 include(get_template_directory() . "/inc/metaboxes.php");
 
 
 
-if ( ! function_exists( 'unite_scripts' ) ) :
+if ( ! function_exists( 'disjoin_scripts' ) ) :
 /**
  * Enqueue scripts and styles.
  */
-function unite_scripts() {
+function disjoin_scripts() {
 
-	wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
+	wp_enqueue_style( 'disjoin-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
 
-	wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
+	wp_enqueue_style( 'disjoin-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
-	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'disjoin-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('unite-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
+	wp_enqueue_script('disjoin-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
-	wp_enqueue_script( 'unite-functions', get_template_directory_uri() . '/inc/js/main.min.js', array('jquery') );
+	wp_enqueue_script( 'disjoin-functions', get_template_directory_uri() . '/inc/js/main.min.js', array('jquery') );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 endif;
-add_action( 'wp_enqueue_scripts', 'unite_scripts' );
+add_action( 'wp_enqueue_scripts', 'disjoin_scripts' );
 
 
-if ( ! function_exists( 'unite_ie_support_header' ) ) :
+if ( ! function_exists( 'disjoin_ie_support_header' ) ) :
 /**
  * Add HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries
  */
-function unite_ie_support_header() {
+function disjoin_ie_support_header() {
     echo '<!--[if lt IE 9]>'. "\n";
     echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
     echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
     echo '<![endif]-->'. "\n";
 }
 endif;
-add_action( 'wp_head', 'unite_ie_support_header', 1 );
+add_action( 'wp_head', 'disjoin_ie_support_header', 1 );
 
 /**
  * Implement the Custom Header feature.
@@ -223,14 +223,14 @@ require get_template_directory() . '/inc/socialnav.php';
 
 /* All Globals variables */
 global $text_domain;
-$text_domain = 'unite';
+$text_domain = 'disjoin';
 
 global $site_layout;
 $site_layout = array('side-pull-left' => esc_html__('Right Sidebar', 'dazzling'),'side-pull-right' => esc_html__('Left Sidebar', 'dazzling'),'no-sidebar' => esc_html__('No Sidebar', 'dazzling'),'full-width' => esc_html__('Full Width', 'dazzling'));
 
 // Option to switch between the_excerpt and the_content
 global $blog_layout;
-$blog_layout = array('1' => __('Display full content for each post', 'unite'),'2' => __('Display excerpt for each post', 'unite'));
+$blog_layout = array('1' => __('Display full content for each post', 'disjoin'),'2' => __('Display excerpt for each post', 'disjoin'));
 
 // Typography Options
 global $typography_options;
@@ -264,7 +264,7 @@ function of_get_option( $name, $default = false ) {
 
   $option_name = '';
   // Get option settings from database
-  $options = get_option( 'unite' );
+  $options = get_option( 'disjoin' );
 
   // Return specific option
   if ( isset( $options[$name] ) ) {

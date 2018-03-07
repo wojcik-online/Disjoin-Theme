@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package unite
+ * @package disjoin
  */
 
 get_header();
@@ -18,12 +18,12 @@ get_header();
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
 					<div class="entry-meta">
-						<?php unite_posted_on(); ?>
+						<?php disjoin_posted_on(); ?>
 					</div><!-- .entry-meta -->
 
 					<nav role="navigation" id="image-navigation" class="navigation-image nav-links">
-						<div class="nav-previous"><?php previous_image_link( false, __( '<i class="fa fa-chevron-left"></i> Previous', 'unite' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="fa fa-chevron-right"></i>', 'unite' ) ); ?></div>
+						<div class="nav-previous"><?php previous_image_link( false, __( '<i class="fa fa-chevron-left"></i> Previous', 'disjoin' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="fa fa-chevron-right"></i>', 'disjoin' ) ); ?></div>
 					</nav><!-- #image-navigation -->
 				</header><!-- .entry-header -->
 
@@ -64,7 +64,7 @@ get_header();
 							?>
 
 							<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters( 'unite_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+								$attachment_size = apply_filters( 'disjoin_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 								echo wp_get_attachment_image( $post->ID, $attachment_size );
 							?></a>
 						</div><!-- .attachment -->
@@ -79,7 +79,7 @@ get_header();
 					<?php the_content(); ?>
 					<?php
 						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __( 'Pages:', 'unite' ),
+							'before' => '<div class="page-links">' . __( 'Pages:', 'disjoin' ),
 							'after'  => '</div>',
 						) );
 					?>

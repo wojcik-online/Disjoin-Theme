@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Unite Theme 0.1\n"
+"Project-Id-Version: Disjoin Theme 0.1\n"
 "POT-Creation-Date: 2015-05-13 20:50+0200\n"
 "PO-Revision-Date: 2015-05-13 20:50+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
@@ -644,8 +644,8 @@ msgid "Support and Documentation"
 msgstr "Support und Dokumentation"
 
 #: ../inc/extras.php:361
-msgid "Unite Documentation"
-msgstr "Unite-Dokumentation"
+msgid "Disjoin Documentation"
+msgstr "Disjoin-Dokumentation"
 
 #: ../inc/extras.php:362
 msgid ""
@@ -710,8 +710,8 @@ msgstr ""
 "Beitr&auml;gen und Kommentaren an"
 
 #: ../inc/popular-posts-widget.php:19
-msgid "Unite: Popular Posts Widget"
-msgstr "Unite: Beliebte Posts-Widget"
+msgid "Disjoin: Popular Posts Widget"
+msgstr "Disjoin: Beliebte Posts-Widget"
 
 #: ../inc/popular-posts-widget.php:37
 #, fuzzy

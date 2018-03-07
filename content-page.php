@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package unite
+ * @package disjoin
  */
 ?>
 
@@ -15,10 +15,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'unite' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'disjoin' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'unite' ), '<footer class="entry-meta"><i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'disjoin' ), '<footer class="entry-meta"><i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

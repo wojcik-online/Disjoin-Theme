@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Unite Theme\n"
+"Project-Id-Version: Disjoin Theme\n"
 "POT-Creation-Date: 2015-10-09 21:47+0300\n"
 "PO-Revision-Date: 2015-10-09 21:47+0300\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
@@ -554,8 +554,8 @@ msgid "Support and Documentation"
 msgstr "Suporte e Documentação"
 
 #: ../inc/extras.php:361
-msgid "Unite Documentation"
-msgstr "Documentação Unite"
+msgid "Disjoin Documentation"
+msgstr "Documentação Disjoin"
 
 #: ../inc/extras.php:362
 msgid ""
@@ -615,8 +615,8 @@ msgid "Displays tabbed list of popular posts, recent posts & comments"
 msgstr "Exibir lista de Postagens Populares, Postagens Recentes & Comentários"
 
 #: ../inc/popular-posts-widget.php:19
-msgid "Unite: Popular Posts Widget"
-msgstr "Unite: Widget (Ferramentas) de Postagens Populares"
+msgid "Disjoin: Popular Posts Widget"
+msgstr "Disjoin: Widget (Ferramentas) de Postagens Populares"
 
 #: ../inc/popular-posts-widget.php:37
 msgid "Popular"

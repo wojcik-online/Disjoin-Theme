@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package unite
+ * @package disjoin
  */
 ?>
 	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
@@ -14,14 +14,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'unite' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'disjoin' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'unite' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'disjoin' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

@@ -3,20 +3,20 @@
  * Plugin Name: Popular Posts
  */
 
-class unite_popular_posts_widget extends WP_Widget {
+class disjoin_popular_posts_widget extends WP_Widget {
 
 	/**
 	 * Widget setup.
 	 */
 	function __construct() {
 		/* Widget settings. */
-		$widget_ops = array( 'classname' => 'unite_tabbed_widget', 'description' => __('Displays tabbed list of popular posts, recent posts & comments', 'unite') );
+		$widget_ops = array( 'classname' => 'disjoin_tabbed_widget', 'description' => __('Displays tabbed list of popular posts, recent posts & comments', 'disjoin') );
 
 		/* Widget control settings. */
-		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'unite_tabbed_widget' );
+		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'disjoin_tabbed_widget' );
 
 		/* Create the widget. */
-		parent::__construct( 'unite_tabbed_widget', __('Unite: Popular Posts Widget', 'unite'), $widget_ops, $control_ops );
+		parent::__construct( 'disjoin_tabbed_widget', __('Disjoin: Popular Posts Widget', 'disjoin'), $widget_ops, $control_ops );
 	}
 
 	/**
@@ -34,8 +34,8 @@ class unite_popular_posts_widget extends WP_Widget {
         <div class="widget tabbed">
             <div class="tabs-wrapper">
                 <ul class="nav nav-tabs">
-                      <li class="active"><a href="#popular-posts" data-toggle="tab"><?php _e('Popular', 'unite') ?></a></li>
-                      <li><a href="#recent" data-toggle="tab"><?php _e('Recent', 'unite') ?></a></li>
+                      <li class="active"><a href="#popular-posts" data-toggle="tab"><?php _e('Popular', 'disjoin') ?></a></li>
+                      <li><a href="#recent" data-toggle="tab"><?php _e('Recent', 'disjoin') ?></a></li>
                       <li><a href="#messages" data-toggle="tab"><i class="fa fa-comments tab-comment"></i></a></li>
                 </ul>
 
@@ -102,7 +102,7 @@ class unite_popular_posts_widget extends WP_Widget {
 
                     <li>
                         <div class="content">
-                            <?php if ( $comment->comment_author ) { echo $comment->comment_author; } else { _e('Anonymous','unite'); } ?> <?php _e('on','unite'); ?>
+                            <?php if ( $comment->comment_author ) { echo $comment->comment_author; } else { _e('Anonymous','disjoin'); } ?> <?php _e('on','disjoin'); ?>
                             <a href="<?php echo get_permalink($comment->comment_post_ID) ?>" rel="bookmark" title="<?php echo get_the_title($comment->comment_post_ID); ?>">
                                 <?php echo get_the_title($comment->comment_post_ID); ?>
                             </a>
@@ -146,7 +146,7 @@ class unite_popular_posts_widget extends WP_Widget {
 
 		<!-- Number of posts -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e('Number of posts to show','unite') ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e('Number of posts to show','disjoin') ?>:</label>
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo $instance['number']; ?>" size="3" />
 		</p>
 

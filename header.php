@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package unite
+ * @package disjoin
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -44,7 +44,7 @@
 				</div>
 
 			<div class="social-header col-md-6">
-				<?php unite_social_icons(); // Social icons in header ?>
+				<?php disjoin_social_icons(); // Social icons in header ?>
 			</div>
 
 		</header><!-- #masthead -->
